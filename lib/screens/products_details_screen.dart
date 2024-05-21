@@ -56,13 +56,13 @@ class ProductDetailScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(product.name, style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, fontFamily: 'Lato',)),
+                Text(product.name, style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, fontFamily: 'Lato',)),
                 Text(
                   '\$${product.price}',
                   style: TextStyle(
                     fontFamily: 'Lato',
                     fontWeight: FontWeight.w500,
-                    fontSize: 24,
+                    fontSize: 15,
                     height: 1.2,
                     color: Color(0xFF222222),
                   ),
