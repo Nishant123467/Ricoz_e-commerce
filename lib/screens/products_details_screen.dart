@@ -14,7 +14,14 @@ class ProductDetailScreen extends StatelessWidget {
     return Scaffold(
    
       appBar: AppBar(
+        leading: InkWell(
+            onTap: (){
+              Navigator.pop(context);
+            },
+            child: Icon(Icons.arrow_back_ios_new_rounded,color: Colors.black,)),
          centerTitle: true,
+        backgroundColor: Colors.white,
+        elevation: 0,
         title: Text(
           product.name,
           style: TextStyle(
@@ -28,8 +35,9 @@ class ProductDetailScreen extends StatelessWidget {
         
         actions: [
           IconButton(
-            icon: Icon(Icons.share, size: 26),
+            icon: Icon(Icons.share, size: 26,color: Colors.black,),
             onPressed: () {
+
               // Add your share functionality here
             },
           ),
@@ -45,22 +53,26 @@ class ProductDetailScreen extends StatelessWidget {
                 ? Image.network(product.imageUrl, width: double.infinity, height: 200, fit: BoxFit.cover)
                 : Icon(Icons.image, size: 200),
             SizedBox(height: 16.0),
-            Text(product.name, style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, fontFamily: 'Lato',)),
-            SizedBox(height: 8.0),
-          //  Text('\$${product.price}', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900)),
-           Align(
-              alignment: Alignment.centerRight,
-              child: Text(
-                '\$${product.price}',
-                style: TextStyle(
-                  fontFamily: 'Lato',
-                  fontWeight: FontWeight.w900,
-                  fontSize: 24,
-                  height: 1.2,
-                  color: Color(0xFF222222),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(product.name, style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, fontFamily: 'Lato',)),
+                Text(
+                  '\$${product.price}',
+                  style: TextStyle(
+                    fontFamily: 'Lato',
+                    fontWeight: FontWeight.w500,
+                    fontSize: 24,
+                    height: 1.2,
+                    color: Color(0xFF222222),
+                  ),
                 ),
-              ),
+              ],
             ),
+            Text("Subtitle",style: TextStyle(color: Colors.grey,fontSize: 13),),
+          //  Text('\$${product.price}', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900)),
+            Row(mainAxisAlignment: MainAxisAlignment.start,
+                children: List.generate(5, (index) => Image.asset("assets/images/star.png",width: 15,))..add(Text(" (10)",style: TextStyle(color: Colors.grey),))),
             SizedBox(height: 16.0),
            // Text(product.description),
             SizedBox(

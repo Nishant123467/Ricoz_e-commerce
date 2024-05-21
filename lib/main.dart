@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'E-commerce App',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+       primaryColor: Colors.white
       ),
       home: MainScreen(),//ProductListScreen(),
     );
